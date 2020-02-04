@@ -13,11 +13,11 @@ import appleIcon120x120 from '@images/favicons/apple-icon-120x120.png';
 import appleIcon144x144 from '@images/favicons/apple-icon-144x144.png';
 import appleIcon152x152 from '@images/favicons/apple-icon-152x152.png';
 import appleIcon180x180 from '@images/favicons/apple-icon-180x180.png';
-import androidIcon192x192 from '@images/favicons/android-chrome-192x192.png';
+import androidIcon192x192 from '@images/favicons/android-icon-192x192.png';
 import favicon16x16 from '@images/favicons/favicon-16x16.png';
 import favicon32x32 from '@images/favicons/favicon-32x32.png';
 import favicon96x96 from '@images/favicons/favicon-96x96.png';
-import msIcon150x150 from '@images/favicons/mstile-150x150.png';
+import msIcon150x150 from '@images/favicons/ms-icon-150x150.png';
 
 const Head = ({ metadata }) => (
   <Helmet>
