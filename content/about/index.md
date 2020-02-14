@@ -9,6 +9,7 @@ skills:
   - Node.js
   - Express
   - MySQL
+  - Git
 ---
 
 Hello! I'm Jakub, a software engineer based in Prague who enjoys building websites and web apps that provide intuitive, pixel-perfect user interfaces with efficient and modern backends.

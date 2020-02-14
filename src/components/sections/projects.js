@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import sr from '@utils/sr';
@@ -22,16 +22,16 @@ const StyledTitle = styled.h4`
     display: block;
   }
 `;
-const StyledArchiveLink = styled(Link)`
-  ${mixins.inlineLink};
-  text-align: center;
-  margin: 0 auto;
-  font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.sm};
-  &:after {
-    bottom: 0.1em;
-  }
-`;
+// const StyledArchiveLink = styled(Link)`
+//   ${mixins.inlineLink};
+//   text-align: center;
+//   margin: 0 auto;
+//   font-family: ${fonts.SFMono};
+//   font-size: ${fontSizes.sm};
+//   &:after {
+//     bottom: 0.1em;
+//   }
+// `;
 const StyledGrid = styled.div`
   margin-top: 50px;
 
@@ -145,10 +145,10 @@ const Projects = ({ data }) => {
 
   return (
     <StyledContainer>
-      <StyledTitle ref={revealTitle}>Other Noteworthy Projects</StyledTitle>
-      <StyledArchiveLink to="/archive" ref={revealArchiveLink}>
+      <StyledTitle ref={revealTitle}>Other Projects</StyledTitle>
+      {/* <StyledArchiveLink to="/archive" ref={revealArchiveLink}>
         view the archive
-      </StyledArchiveLink>
+      </StyledArchiveLink> */}
 
       <StyledGrid>
         <TransitionGroup className="projects">
