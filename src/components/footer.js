@@ -1,13 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  IconGitHub,
-  IconLinkedin,
-  IconInstagram,
-  IconTwitter,
-  IconStar,
-  IconFork,
-} from '@components/icons';
+import { IconGitHub, IconLinkedin, IconInstagram, IconTwitter } from '@components/icons';
 import { socialMedia } from '@config';
 import styled from 'styled-components';
 import { theme, mixins, media } from '@styles';
@@ -53,102 +46,51 @@ const StyledGitHubLink = styled.a`
   color: ${colors.slate};
   padding: 10px;
 `;
-const StyledGitHubInfo = styled.div`
-  margin-top: 10px;
 
-  & > span {
-    display: inline-flex;
-    align-items: center;
-    margin: 0 7px;
-  }
-  svg {
-    display: inline-block;
-    height: 15px;
-    width: auto;
-    margin-right: 5px;
-  }
-`;
-
-const Footer = () => {
-  const [githubInfo, setGitHubInfo] = useState({
-    stars: null,
-    forks: null,
-  });
-
-  useEffect(() => {
-    if (process.env.NODE_ENV !== 'production') {
-      return;
-    }
-    fetch('https://api.github.com/repos/Esskimo/PersonalWeb')
-      .then(response => response.json())
-      .then(json => {
-        const { stargazers_count, forks_count } = json;
-        setGitHubInfo({
-          stars: stargazers_count,
-          forks: forks_count,
-        });
-      })
-      .catch(e => console.error(e));
-  }, []);
-
-  return (
-    <StyledContainer>
-      <StyledSocial>
-        <StyledSocialList>
-          {socialMedia &&
-            socialMedia.map(({ name, url }, i) => (
-              <li key={i}>
-                <StyledSocialLink
-                  href={url}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  aria-label={name}>
-                  {name === 'GitHub' ? (
-                    <IconGitHub />
-                  ) : name === 'Linkedin' ? (
-                    <IconLinkedin />
-                  ) : name === 'Instagram' ? (
-                    <IconInstagram />
-                  ) : name === 'Twitter' ? (
-                    <IconTwitter />
-                  ) : (
-                    <IconGitHub />
-                  )}
-                </StyledSocialLink>
-              </li>
-            ))}
-        </StyledSocialList>
-      </StyledSocial>
-      <StyledMetadata tabindex="-1">
-        <StyledGitHubLink
-          href="https://github.com/Esskimo/PersonalWeb"
-          target="_blank"
-          rel="nofollow noopener noreferrer">
-          <div>
-            Made with{' '}
-            <span role="img" aria-label="Hear emoji">
-              ❤️
-            </span>{' '}
-            by Jakub Štěrba
-          </div>
-
-          {githubInfo.stars && githubInfo.forks && (
-            <StyledGitHubInfo>
-              <span>
-                <IconStar />
-                <span>{githubInfo.stars}</span>
-              </span>
-              <span>
-                <IconFork />
-                <span>{githubInfo.forks}</span>
-              </span>
-            </StyledGitHubInfo>
-          )}
-        </StyledGitHubLink>
-      </StyledMetadata>
-    </StyledContainer>
-  );
-};
+const Footer = () => (
+  <StyledContainer>
+    <StyledSocial>
+      <StyledSocialList>
+        {socialMedia &&
+          socialMedia.map(({ name, url }, i) => (
+            <li key={i}>
+              <StyledSocialLink
+                href={url}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                aria-label={name}>
+                {name === 'GitHub' ? (
+                  <IconGitHub />
+                ) : name === 'Linkedin' ? (
+                  <IconLinkedin />
+                ) : name === 'Instagram' ? (
+                  <IconInstagram />
+                ) : name === 'Twitter' ? (
+                  <IconTwitter />
+                ) : (
+                  <IconGitHub />
+                )}
+              </StyledSocialLink>
+            </li>
+          ))}
+      </StyledSocialList>
+    </StyledSocial>
+    <StyledMetadata tabindex="-1">
+      <StyledGitHubLink
+        href="https://github.com/Esskimo/PersonalWeb"
+        target="_blank"
+        rel="nofollow noopener noreferrer">
+        <div>
+          Made with{' '}
+          <span role="img" aria-label="Hear emoji">
+            ❤️
+          </span>{' '}
+          by Jakub Štěrba
+        </div>
+      </StyledGitHubLink>
+    </StyledMetadata>
+  </StyledContainer>
+);
 
 Footer.propTypes = {
   githubInfo: PropTypes.object,

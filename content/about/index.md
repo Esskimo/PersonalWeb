@@ -5,9 +5,10 @@ skills:
   - JavaScript (ES6+)
   - HTML & (S)CSS
   - React
-  - PHP
+  - Redux
   - Node.js
   - Express
+  - PHP
   - MySQL
   - Git
 ---
