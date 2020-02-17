@@ -2,8 +2,8 @@
 date: '1'
 title: 'Oauth Endpoint'
 cover: './oauth.png'
-github: 'https://github.com/esskimo/oauth-endpoint'
-external: 'https://oauth.acomware.cz/'
+github: ''
+external: ''
 tech:
   - Node.js
   - Express
