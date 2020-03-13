@@ -55,7 +55,7 @@ const Layout = ({ children, location }) => {
   const [isLoading, setIsLoading] = useState(isHome);
 
   useEffect(() => {
-    if (isLoading || isHome) {
+    if (isLoading) {
       return;
     }
     if (location.hash) {
@@ -65,6 +65,7 @@ const Layout = ({ children, location }) => {
         if (el) {
           el.scrollIntoView();
         }
+        el.focus();
       }, 0);
     }
   }, [isLoading]);
